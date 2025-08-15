@@ -1,105 +1,154 @@
-<!DOCTYPE html><html lang="ja">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amazon ギフト — キャンペーン</title>
-  <meta name="description" content="キャンペーン用ランディング（軽量・モバイル最適化）" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --ink:#111827;
-      --muted:#6b7280;
-      --bg:#fcfcfc;
-      --card:#ffffff;
-      --edge:#e5e7eb;
-      --accent:#f59e0b;
-      --accent-ink:#1f2937;
-      --shadow:0 10px 24px rgba(17,24,39,.08);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      background:var(--bg); color:var(--ink);
-    }
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block; border-radius:12px}
-    .container{max-width:1080px; margin:0 auto; padding:0 16px}
-    header{
-      position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid var(--edge);
-      backdrop-filter:saturate(1.1) blur(6px);
-    }
-    .nav{display:flex; align-items:center; justify-content:space-between; height:56px}
-    .brand{font-weight:800; letter-spacing:.3px}
-    .nav a.btn{display:inline-flex; align-items:center; gap:8px; font-weight:600; padding:9px 12px; border:1px solid var(--edge); border-radius:999px}
-    .hero{padding:26px 0 10px}
-    .hero-inner{display:grid; grid-template-columns:1fr; gap:18px}
-    @media(min-width:900px){.hero-inner{grid-template-columns:1.1fr .9fr; align-items:center; gap:32px}}
-    .headline{font-size:2.2rem; line-height:1.15; margin:8px 0; font-weight:800}
-    @media(min-width:900px){.headline{font-size:3rem}}
-    .sub{color:var(--muted); font-size:1.05rem; margin:14px 0 22px}
-    .cta{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:16px 24px; border-radius:16px; font-weight:800; letter-spacing:.4px; background:var(--accent); color:#111; border:1px solid #d97706; box-shadow:var(--shadow); transition:transform .06s ease; cursor:pointer; font-size:1.05rem}
-    .cta:active{transform:translateY(1px)}
-    .card-visual{background:var(--card); border:1px solid var(--edge); border-radius:18px; box-shadow:var(--shadow); padding:0; display:grid; place-items:center; overflow:hidden}
-    .steps{margin:22px 0 10px}
-    .steps-grid{display:grid; grid-template-columns:1fr; gap:12px}
-    @media(min-width:760px){.steps-grid{grid-template-columns:repeat(3,1fr)}}
-    .step{background:var(--card); border:1px solid var(--edge); border-radius:16px; padding:16px; box-shadow:var(--shadow)}
-    .step h3{margin:8px 0 4px; font-size:1rem}
-    .step p{margin:0; color:var(--muted); font-size:.95rem}
-    footer{color:var(--muted); font-size:.9rem; border-top:1px solid var(--edge); padding:18px 0; margin-top:24px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amazon.co.jp — ギフトカードキャンペーン</title>
+<style>
+/* ===== Reset mínimo e base determinística ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans JP", sans-serif;
+  color:#111827; background:#fcfcfc; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+img{max-width:100%;display:block}
+
+/* ===== Tokens ===== */
+:root{
+  --ink:#111827; --muted:#6b7280; --edge:#e5e7eb; --card:#fff;
+  --cta:#f59e0b; --cta-b:#d97706; --shadow:0 12px 28px rgba(17,24,39,.08);
+}
+
+/* ===== Topbar ===== */
+.header{
+  position:sticky; top:0; z-index:50; height:64px; background:#fff; border-bottom:1px solid var(--edge);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 1px 0 rgba(0,0,0,.02);
+}
+.header-inner{
+  width:100%; max-width:1100px; padding:0 16px; display:flex; align-items:center; justify-content:space-between;
+}
+.brand{font-weight:800; font-size:18px; letter-spacing:.2px}
+.header-link{font-size:14px; color:#374151; text-decoration:none}
+.header-link:hover{text-decoration:underline}
+
+/* ===== Layout ===== */
+.wrap{max-width:1100px; margin:0 auto; padding:20px 16px 28px}
+.hero{
+  display:grid; grid-template-columns:1fr; gap:22px; align-items:center;
+}
+@media (min-width: 900px){
+  .hero{grid-template-columns:1.05fr .95fr}
+}
+
+/* ===== Left column (texto) ===== */
+.badge{color:#9ca3af; font-weight:700; font-size:13px; margin-bottom:8px}
+.h1{
+  font-weight:900; line-height:1.15; letter-spacing:.2px;
+  font-size:34px; margin:6px 0 10px;
+}
+@media (min-width:900px){ .h1{font-size:44px} }
+.sub{color:var(--muted); font-size:16px; margin:6px 0 18px}
+.cta{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:16px 24px; border-radius:16px; font-weight:900; font-size:18px; letter-spacing:.4px;
+  background:var(--cta); color:#111; border:1px solid var(--cta-b); box-shadow:var(--shadow); cursor:pointer;
+}
+.cta:active{transform:translateY(1px)}
+
+/* ===== Right column (imagem do gift) ===== */
+.hero-visual{
+  position:relative; border-radius:18px; overflow:hidden; background:var(--card);
+  border:1px solid var(--edge); box-shadow:var(--shadow);
+}
+.hero-visual .media{
+  width:100%; height:100%; aspect-ratio:16/10; object-fit:cover;
+}
+
+/* ===== Form box ===== */
+.form{
+  margin-top:10px; background:#fff; border:1px solid var(--edge); border-radius:18px; box-shadow:var(--shadow);
+  padding:16px;
+}
+.form label{font-weight:700; font-size:14px; color:#111}
+.input{
+  width:100%; margin:10px 0; padding:14px 12px; border:1px solid var(--edge); border-radius:12px; font-size:16px;
+}
+.btn{all:unset}
+.btn{display:inline-flex; align-items:center; justify-content:center; padding:14px 18px; border-radius:12px;
+     background:var(--cta); color:#111; border:1px solid var(--cta-b); font-weight:800; box-shadow:var(--shadow); cursor:pointer}
+
+/* ===== Steps ===== */
+.steps{margin:24px 0 6px}
+.grid{display:grid; grid-template-columns:1fr; gap:12px}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
+.step{background:#fff; border:1px solid var(--edge); border-radius:16px; padding:16px; box-shadow:var(--shadow)}
+.step h3{font-size:16px; margin-bottom:6px}
+.step p{color:var(--muted); font-size:14px}
+
+/* ===== Footer ===== */
+.footer{border-top:1px solid var(--edge); color:#6b7280; font-size:13px; padding:18px 16px; text-align:center}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">Amazon.co.jp</div>
-      <a class="btn" href="#details">キャンペーンについて</a>
-    </div>
-  </header> <main class="container">
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <p style="margin:0; color:#9ca3af; font-weight:600">日本限定／毎月</p>
-          <h1 class="headline">今だけ！ ¥50,000〜¥100,000 の <br>Amazonギフトカードが当たるチャンス！</h1>
-          <p class="sub">応募は簡単・無料。メールを登録して、好きなカテゴリを選ぶだけ。</p>
-          <a class="cta" href="#form">今すぐ応募する</a>
-        </div>
-        <div class="card-visual" aria-hidden="true">
-          <img src="./assets/gift-hero.jpg" alt="Amazon ギフトカード" style="width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; display:block"/>
-        </div>
-      </div>
-    </section><section id="form" class="card-visual" style="margin:10px 0 14px; padding:16px">
-  <form onsubmit="event.preventDefault(); alert('送信完了：サンプルです。実運用ではニュースレターの埋め込みに差し替えてください。');" style="display:grid; grid-template-columns:1fr; gap:10px">
-    <label for="email" style="font-weight:600">最新情報を受け取る</label>
-    <input id="email" type="email" required placeholder="メールアドレス" 
-           style="padding:14px 12px; border-radius:12px; border:1px solid var(--edge); font-size:1rem" />
-    <button class="cta" type="submit">登録する</button>
-    <p style="margin:0; color:var(--muted); font-size:.9rem">※情報は安全に保護されます。いつでも解除できます。</p>
-  </form>
-</section>
 
-<section class="steps" id="details">
-  <div class="steps-grid">
-    <div class="step">
-      <h3>1) メールアドレスを登録</h3>
-      <p>埋め込みフォーム（Beehiiv / ConvertKit等）に置き換えてください。</p>
-    </div>
-    <div class="step">
-      <h3>2) 好きなカテゴリを選ぶ</h3>
-      <p>メール内リンクから当サイトのカテゴリページへ移動。</p>
-    </div>
-    <div class="step">
-      <h3>3) ギフトカード抽選に参加！</h3>
-      <p>利用規約・プライバシーに同意のうえ応募。</p>
-    </div>
+<!-- Top bar -->
+<div class="header">
+  <div class="header-inner">
+    <div class="brand">Amazon.co.jp</div>
+    <a class="header-link" href="#details">キャンペーンについて</a>
   </div>
-</section>
+</div>
 
-  </main> <footer class="container">
-    <div>© <span id="y"></span> Neodeals — このページはデモです。実運用では規約・プライバシーを設置してください。</div>
-  </footer> <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script></body>
+<!-- Conteúdo -->
+<main class="wrap">
+  <section class="hero">
+    <!-- Texto -->
+    <div>
+      <div class="badge">日本限定／毎月</div>
+      <h1 class="h1">今だけ！ ¥50,000〜¥100,000 の<br>Amazonギフトカードが当たるチャンス！</h1>
+      <p class="sub">毎月限定キャンペーン！応募は簡単・無料。メールを登録して、好きなカテゴリを選ぶだけ。</p>
+      <a href="#form" class="cta">今すぐ応募する</a>
+    </div>
+
+    <!-- Imagem (fica por trás/ao lado do botão no mobile/desktop) -->
+    <div class="hero-visual" aria-hidden="true">
+      <!-- Coloque o arquivo gift-hero.jpg na MESMA PASTA deste HTML -->
+      <img class="media" src="gift-hero.jpg" alt="Amazon ギフトカードのボックス写真">
+    </div>
+  </section>
+
+  <!-- Formulário / embed -->
+  <section id="form" class="form">
+    <form onsubmit="event.preventDefault(); alert('送信完了（デモ）。本番ではニュースレターの埋め込みに差し替えてください。');">
+      <label for="email">最新情報を受け取る</label>
+      <input id="email" type="email" required placeholder="メールアドレス" class="input">
+      <button type="submit" class="btn">登録する</button>
+      <p style="margin-top:8px; color:var(--muted); font-size:13px">※情報は安全に保護されます。いつでも解除できます。</p>
+    </form>
+  </section>
+
+  <!-- Steps -->
+  <section id="details" class="steps">
+    <div class="grid">
+      <div class="step">
+        <h3>1) メールアドレスを登録</h3>
+        <p>埋め込みフォーム（Beehiiv / ConvertKit等）に置き換えてください。</p>
+      </div>
+      <div class="step">
+        <h3>2) 好きなカテゴリを選ぶ</h3>
+        <p>メール内リンクから当サイトのカテゴリページへ移動。</p>
+      </div>
+      <div class="step">
+        <h3>3) ギフトカード抽選に参加！</h3>
+        <p>利用規約・プライバシーに同意のうえ応募。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">© <span id="y"></span> Neodeals — デモページ。実運用では規約・プライバシーを設置してください。</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
 </html>
